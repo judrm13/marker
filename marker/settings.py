@@ -4,11 +4,12 @@ __version__ = ".".join(map(str, __version_info__))
 __author__ = "Mustafa Quraish"
 __license__ = "MIT"
 
+
 import os
-from pydantic import BaseSettings
+from pydantic_settings import BaseSettings  # en lugar de pydantic.BaseSettings
 
 class MarkerSettings(BaseSettings):
     log_level: str = os.getenv("MARKER_LOG_LEVEL", "INFO")
-    # add other configs as needed
 
 settings = MarkerSettings()
+
