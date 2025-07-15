@@ -9,7 +9,7 @@ import os
 from pydantic_settings import BaseSettings  # en lugar de pydantic.BaseSettings
 
 class MarkerSettings(BaseSettings):
-    log_level: str = os.getenv("MARKER_LOG_LEVEL", "INFO")
+    LOGLEVEL: str = os.getenv("MARKER_LOG_LEVEL", "INFO")
 
 settings = MarkerSettings()
 
